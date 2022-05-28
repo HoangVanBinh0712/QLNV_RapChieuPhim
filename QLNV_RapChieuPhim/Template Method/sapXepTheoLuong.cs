@@ -8,13 +8,13 @@ namespace QLNV_RapChieuPhim
 {
     public class sapXepTheoLuong : SortAlgorithm
     {
-        public override bool compare(object[] a, object[] b)
+        public override bool compare(object[] a, object[] b, bool des)
         {
             int numa = int.Parse(a.GetValue(3).ToString());
             int numb = int.Parse(b.GetValue(3).ToString());
             if (numa > numb)
-                return true;
-            return false;
+                return des != true;
+            return des != false;
         }
     }
 }

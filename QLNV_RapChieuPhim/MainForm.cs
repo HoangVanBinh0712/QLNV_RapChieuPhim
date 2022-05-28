@@ -44,14 +44,18 @@ namespace QLNV_RapChieuPhim
         {
             db = new DBBusiness();
             DataSet dt = db.getLuong();
-            //Template Method
-            sapXepTheoLuong sortId = new sapXepTheoLuong();
-            sortId.processArray(dt.Tables[0]);
-            dgvMain.DataSource = sortId.returnArray();
-
+            dgvMain.DataSource = dt.Tables[0];
             int x = dgvMain.Columns.Count;
             for (int i = 0; i < x; i++)
                 dgvMain.Columns[i].Width = (dgvMain.Width - 60) / x;
+            cbSort.Items.Clear();
+            cbSort.Items.Add("Lương");
+            cbSort.Items.Add("Tổng Lương");
+            cbSort.Items.Add("Mã NV");
+            cbSort.Items.Add("Ngày");
+            cbSort.Items.Add("Thưởng");
+            cbSort.Items.Add("Số giờ");
+
         }
         void newchuthich(ToolTip[] x,int n)
         {
@@ -107,9 +111,8 @@ namespace QLNV_RapChieuPhim
 
                     
                     luong.setLuongID(int.Parse(dgvMain.Rows[r].Cells[0].Value.ToString()));
-                    MessageBox.Show(dgvMain.Rows[r].Cells[0].Value.ToString());
 
-                    luong.setLuongdate(DateTime.Parse(dgvMain.Rows[r].Cells[1].Value.ToString()));
+                    luong.setLuongdate(Convert.ToDateTime(dgvMain.Rows[r].Cells[1].Value.ToString()));
 
                     luong.setLuongSogiolam(int.Parse(dgvMain.Rows[r].Cells[2].Value.ToString()));
 
@@ -318,21 +321,33 @@ namespace QLNV_RapChieuPhim
 
         private void xemLươngToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            cbChucNang.SelectedItem = "LƯƠNG";
-            int i;
-            for (i = 0; i < dgvMain.Rows.Count; i++)
-                if (int.Parse(lg.getUsername()) == (int)dgvMain.Rows[i].Cells[0].Value)
-                    break;
-            int r = i;
-            LUONGDAO luong = new LUONGDAO();
-            luong.setLuongID((int)dgvMain.Rows[r].Cells[0].Value);
-            luong.setLuongdate((DateTime)dgvMain.Rows[r].Cells[1].Value);
-            luong.setLuongSogiolam((int)dgvMain.Rows[r].Cells[2].Value);
-            luong.setLuongLtheogio((int)dgvMain.Rows[r].Cells[3].Value);
-            luong.setLuongThuong((int)dgvMain.Rows[r].Cells[4].Value);
-            luong.setLuongTongLuong((int)dgvMain.Rows[r].Cells[5].Value);
-            FormLuong x = new FormLuong(luong, db.kiemtraquanly(lg.getUsername()));
-            x.ShowDialog();
+            try
+            {
+                cbChucNang.SelectedItem = "LƯƠNG";
+                int i;
+                for (i = 0; i < dgvMain.Rows.Count; i++)
+                {
+                    if (int.Parse(lg.getUsername()) == int.Parse(dgvMain.Rows[i].Cells[0].Value.ToString()))
+                        break;
+                }
+                int r = i;
+                LUONGDAO luong = new LUONGDAO();
+               
+                luong.setLuongID(int.Parse(dgvMain.Rows[r].Cells[0].Value.ToString()));
+                luong.setLuongdate(Convert.ToDateTime(dgvMain.Rows[r].Cells[1].Value.ToString()).Date);
+                luong.setLuongSogiolam(int.Parse(dgvMain.Rows[r].Cells[2].Value.ToString()));
+                luong.setLuongLtheogio(int.Parse(dgvMain.Rows[r].Cells[3].Value.ToString()));
+                luong.setLuongThuong(int.Parse(dgvMain.Rows[r].Cells[4].Value.ToString()));
+                luong.setLuongTongLuong(int.Parse(dgvMain.Rows[r].Cells[5].Value.ToString()));
+                FormLuong x = new FormLuong(luong, db.kiemtraquanly(lg.getUsername()));
+                x.ShowDialog();
+
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message.ToString());
+            }
+          
         }
 
         private void đăngXuấtToolStripMenuItem_Click(object sender, EventArgs e)
@@ -347,12 +362,126 @@ namespace QLNV_RapChieuPhim
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (dgvMain.DataSource == null)
+            if(cbChucNang.SelectedItem.ToString() == "NHÂN VIÊN")
+            {
+                if (dgvMain.DataSource == null)
+                    return;
+                DataTable dataTable = (DataTable)dgvMain.DataSource;
+                sapXepTheoTenCongNhan sortTen = new sapXepTheoTenCongNhan();
+                sortTen.processArray(dataTable, des);
+                dgvMain.DataSource = sortTen.returnArray();
+
                 return;
-            DataTable dataTable = (DataTable)dgvMain.DataSource;
-            sapXepTheoID sortId = new sapXepTheoID();
-            sortId.processArray(dataTable);
-            dgvMain.DataSource = sortId.returnArray();
+            }
+            if (cbChucNang.SelectedItem.ToString() == "CÔNG VIỆC")
+            {
+                if (dgvMain.DataSource == null)
+                    return;
+                DataTable dataTable = (DataTable)dgvMain.DataSource;
+                sapXepTheoTenCongViec sortTen = new sapXepTheoTenCongViec();
+                sortTen.processArray(dataTable, des);
+                dgvMain.DataSource = sortTen.returnArray();
+                return;
+            }
+
+            if (lsort || tlsort || manvsort || ngaysort || thuongsort || sogiolamSort)
+            {
+                if (dgvMain.DataSource == null)
+                    return;
+                DataTable dataTable = (DataTable)dgvMain.DataSource;
+                if(lsort)
+                {
+                    sapXepTheoLuong sortLuong = new sapXepTheoLuong();
+                    sortLuong.processArray(dataTable, des);
+                    dgvMain.DataSource = sortLuong.returnArray();
+                    return;
+                }
+                if (tlsort)
+                {
+
+                    // Tong luong
+                    SapXepTheoTongLuong sortTL = new SapXepTheoTongLuong();
+                    sortTL.processArray(dataTable,des);
+                    dgvMain.DataSource = sortTL.returnArray();
+                    return;
+                }
+                if (manvsort)
+                {
+                    sapXepTheoID sortId = new sapXepTheoID();
+                    sortId.processArray(dataTable,des);
+                    dgvMain.DataSource = sortId.returnArray();
+                    return;
+                }
+                if (ngaysort)
+                {
+                    //  Date
+                    sapXepTheoNgay sortDate = new sapXepTheoNgay();
+                    sortDate.processArray(dataTable,des);
+                    dgvMain.DataSource = sortDate.returnArray();
+                    return;
+                }
+                if (thuongsort)
+                {
+                    sapXepTheoThuong sortThuong = new sapXepTheoThuong();
+                    sortThuong.processArray(dataTable, des);
+                    dgvMain.DataSource = sortThuong.returnArray();
+                    return;
+                }
+                if(sogiolamSort)
+                {
+                    sapXepTheoSoGioLam sortSoGio = new sapXepTheoSoGioLam();
+                    sortSoGio.processArray(dataTable, des);
+                    dgvMain.DataSource = sortSoGio.returnArray();
+                    return;
+                }
+            }
+        
+        }
+        private bool des = false;
+        private bool lsort = false, tlsort = false, manvsort = false, ngaysort = false, thuongsort = false, sogiolamSort = false;
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            des = !des;
+        }
+        private void luong_setFalse()
+        {
+            lsort = false;
+            tlsort = false;
+            manvsort = false;
+            ngaysort = false;
+            thuongsort = false;
+            sogiolamSort = false;
+        }
+        private void cbSort_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            switch (cbSort.SelectedIndex)
+            {
+                case 0:
+                    luong_setFalse();
+                    lsort = true;
+
+                    break;
+                case 1:
+                    luong_setFalse();
+                    tlsort = true;
+                    break;
+                case 2:
+                    luong_setFalse();
+                    manvsort = true;
+                    break;
+                case 3:
+                    luong_setFalse();
+                    ngaysort = true;
+                    break;
+                case 4:
+                    luong_setFalse();
+                    thuongsort = true;
+                    break;
+                case 5:
+                    luong_setFalse();
+                    sogiolamSort = true;
+                    break;
+            }
         }
     }
   

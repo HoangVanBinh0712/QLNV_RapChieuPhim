@@ -47,6 +47,8 @@
             this.picreset = new System.Windows.Forms.PictureBox();
             this.btndetail = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
+            this.cbSort = new System.Windows.Forms.ComboBox();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMain)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv1NV)).BeginInit();
             this.pnlUser.SuspendLayout();
@@ -128,7 +130,7 @@
             // txtTimkiem
             // 
             this.txtTimkiem.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTimkiem.Location = new System.Drawing.Point(161, 488);
+            this.txtTimkiem.Location = new System.Drawing.Point(112, 487);
             this.txtTimkiem.Name = "txtTimkiem";
             this.txtTimkiem.Size = new System.Drawing.Size(109, 29);
             this.txtTimkiem.TabIndex = 18;
@@ -139,7 +141,7 @@
             this.lblsearch.BackColor = System.Drawing.Color.Transparent;
             this.lblsearch.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblsearch.ForeColor = System.Drawing.Color.Blue;
-            this.lblsearch.Location = new System.Drawing.Point(56, 491);
+            this.lblsearch.Location = new System.Drawing.Point(7, 490);
             this.lblsearch.Name = "lblsearch";
             this.lblsearch.Size = new System.Drawing.Size(103, 22);
             this.lblsearch.TabIndex = 20;
@@ -210,7 +212,7 @@
             this.btnTimKiem.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnTimKiem.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnTimKiem.ForeColor = System.Drawing.Color.Black;
-            this.btnTimKiem.Location = new System.Drawing.Point(275, 488);
+            this.btnTimKiem.Location = new System.Drawing.Point(226, 487);
             this.btnTimKiem.Name = "btnTimKiem";
             this.btnTimKiem.Size = new System.Drawing.Size(31, 28);
             this.btnTimKiem.TabIndex = 19;
@@ -268,13 +270,36 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(514, 107);
+            this.button1.Location = new System.Drawing.Point(485, 490);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 22;
-            this.button1.Text = "button1";
+            this.button1.Text = "Sắp xếp";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // cbSort
+            // 
+            this.cbSort.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.cbSort.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbSort.ForeColor = System.Drawing.Color.Red;
+            this.cbSort.FormattingEnabled = true;
+            this.cbSort.Location = new System.Drawing.Point(280, 487);
+            this.cbSort.Name = "cbSort";
+            this.cbSort.Size = new System.Drawing.Size(112, 30);
+            this.cbSort.TabIndex = 23;
+            this.cbSort.SelectedIndexChanged += new System.EventHandler(this.cbSort_SelectedIndexChanged);
+            // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Location = new System.Drawing.Point(411, 495);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(71, 17);
+            this.checkBox1.TabIndex = 24;
+            this.checkBox1.Text = "Giảm dần";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
             // 
             // mainForm
             // 
@@ -283,6 +308,8 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.ClientSize = new System.Drawing.Size(634, 537);
+            this.Controls.Add(this.checkBox1);
+            this.Controls.Add(this.cbSort);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.pnlUser);
             this.Controls.Add(this.lblsearch);
@@ -336,6 +363,8 @@
         private System.Windows.Forms.ToolStripMenuItem xemLươngToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem đăngXuấtToolStripMenuItem;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.ComboBox cbSort;
+        private System.Windows.Forms.CheckBox checkBox1;
     }
 }
 

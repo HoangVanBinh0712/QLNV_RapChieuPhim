@@ -9,15 +9,17 @@ namespace QLNV_RapChieuPhim
 {
     public abstract class SortAlgorithm
     {
-		DataTable arr;
+		private DataTable arr;
+		private bool des = false;
 		public DataTable returnArray()
 		{
 			return arr;
 		}
-		public abstract bool compare(object[] a, object[] b);
-		public void processArray(DataTable arr)
+		public abstract bool compare(object[] a, object[] b, bool des);
+		public void processArray(DataTable arr, bool des)
 		{
 			this.arr = arr;
+			this.des = des;
 			sort();
 		}
 		public void sort()
@@ -34,7 +36,7 @@ namespace QLNV_RapChieuPhim
 			{
 				for (int j = 0; j < dataRows.Length - 1; j++)
 				{
-					if (compare(dataRows[j].ItemArray , dataRows[j + 1].ItemArray))
+					if (compare(dataRows[j].ItemArray , dataRows[j + 1].ItemArray, des))
 					{
 						DataRow temp = dataRows[j];
 						dataRows[j] = dataRows[j + 1];

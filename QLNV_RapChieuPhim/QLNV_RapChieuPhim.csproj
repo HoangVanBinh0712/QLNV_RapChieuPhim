@@ -117,6 +117,12 @@
     <Compile Include="Singleton Pattern\DataLogin.cs" />
     <Compile Include="Template Method\sapXepTheoID.cs" />
     <Compile Include="Template Method\sapXepTheoLuong.cs" />
+    <Compile Include="Template Method\sapXepTheoNgay.cs" />
+    <Compile Include="Template Method\sapXepTheoSoGioLam.cs" />
+    <Compile Include="Template Method\sapXepTheoTenCongNhan.cs" />
+    <Compile Include="Template Method\sapXepTheoTenCongViec.cs" />
+    <Compile Include="Template Method\sapXepTheoThuong.cs" />
+    <Compile Include="Template Method\sapXepTheoTongLuong.cs" />
     <Compile Include="Template Method\SortAlgorithm.cs" />
     <Compile Include="View.cs">
       <SubType>Form</SubType>
