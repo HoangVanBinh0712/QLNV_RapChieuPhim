@@ -136,11 +136,19 @@ namespace QLNV_RapChieuPhim
                 Byte[] bytBLOBData = new Byte[ms.Length];
                 ms.Position = 0;
                 ms.Read(bytBLOBData, 0, Convert.ToInt32(ms.Length));
-                if (!db.insertNV(ref err, id, name, bir, sdt, email, chuyemon, pass, rent, bytBLOBData))
+                //if (!db.insertNV(ref err, id, name, bir, sdt, email, chuyemon, pass, rent, bytBLOBData))
+                //    MessageBox.Show(err, "Thong Bao", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                //else
+                //    MessageBox.Show("Insert successfully", "Thong Bao", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                NhanVienDAO nv = new NhanVienDAO(id, name, bir, sdt, email, chuyemon, rent, pass, picNV.Image);
+                NhanVienAdapter nhanVienAdapter = new NhanVienAdapter();
+
+                if (!nhanVienAdapter.InsertNhanVien(ref err, nv))
                     MessageBox.Show(err, "Thong Bao", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 else
                     MessageBox.Show("Insert successfully", "Thong Bao", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                
+
             }
         }
     

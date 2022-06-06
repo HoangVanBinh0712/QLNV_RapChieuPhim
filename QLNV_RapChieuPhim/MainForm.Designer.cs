@@ -64,7 +64,7 @@
             this.dgvMain.Location = new System.Drawing.Point(11, 189);
             this.dgvMain.Name = "dgvMain";
             this.dgvMain.RowHeadersWidth = 51;
-            this.dgvMain.Size = new System.Drawing.Size(608, 275);
+            this.dgvMain.Size = new System.Drawing.Size(891, 285);
             this.dgvMain.TabIndex = 6;
             // 
             // label1
@@ -307,7 +307,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.ClientSize = new System.Drawing.Size(634, 537);
+            this.ClientSize = new System.Drawing.Size(914, 544);
             this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.cbSort);
             this.Controls.Add(this.button1);

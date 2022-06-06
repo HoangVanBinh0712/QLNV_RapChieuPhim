@@ -64,6 +64,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Adapter Pattern\INhanVien.cs" />
+    <Compile Include="Adapter Pattern\NhanVienAdapter.cs" />
     <Compile Include="DAO\CVDAO.cs" />
     <Compile Include="FormCV.cs">
       <SubType>Form</SubType>

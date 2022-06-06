@@ -50,6 +50,7 @@ namespace QLNV_RapChieuPhim
            
             return rl;
         }
+
         public bool insertNV(ref string err, int id, string name, DateTime birthd,
         string sdt, string Email, string chmon, string pass, DateTime NgayThue, Byte[] img)
         {

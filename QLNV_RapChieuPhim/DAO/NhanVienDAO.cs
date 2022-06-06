@@ -18,6 +18,25 @@ namespace QLNV_RapChieuPhim
         private DateTime DayRented;
         private string password;
         private Image image;
+
+        public NhanVienDAO()
+        {
+        }
+
+        public NhanVienDAO(int iD, string name, DateTime birthday, string phoneNumber, 
+            string email, string job, DateTime dayRented, string password, Image image)
+        {
+            ID = iD;
+            Name = name;
+            this.birthday = birthday;
+            PhoneNumber = phoneNumber;
+            Email = email;
+            Job = job;
+            DayRented = dayRented;
+            this.password = password;
+            this.image = image;
+        }
+
         public int getNVid()
         {
             return this.ID;

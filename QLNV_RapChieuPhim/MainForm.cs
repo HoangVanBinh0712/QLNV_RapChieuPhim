@@ -38,7 +38,7 @@ namespace QLNV_RapChieuPhim
             dgvMain.DataSource = dt.Tables[0];
             int x = dgvMain.Columns.Count;
             for(int i = 0;i<x;i++)  
-                dgvMain.Columns[i].Width = (dgvMain.Width -60)/ x;
+                dgvMain.Columns[i].Width = (dgvMain.Width - 60)/ x;
         }
         public void Luong_load()
         {

@@ -25,6 +25,7 @@ namespace QLNV_RapChieuPhim
                 DataLogin lg = DataLogin.getInstance();
                 lg.setUsername(txtUser.Text);
                 lg.setPassword(txtPass.Text);
+               
                 DBBusiness db = new DBBusiness();
                 if (db.connec == true && db.Check_login() == true)
                 {

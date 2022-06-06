@@ -11,7 +11,6 @@ namespace QLNV_RapChieuPhim
         SqlDataAdapter adp;
         SqlCommand cmd;
         public bool connec = true;
-        /// string sqlstring = "Data Source=(local);Initial Catalog=QUANLYNHANVIENRAPCHIEUPHIM;Persist Security Info=True;User ID=binhhv;Password=123456";
         DataLogin lg = DataLogin.getInstance();
 
         public DBLayer()
@@ -28,7 +27,6 @@ namespace QLNV_RapChieuPhim
             catch (SqlException e)
             {
                 connec = false;
-              //  MessageBox.Show("Sai Tai Khoan Hoac mat khau!", "Thong bao",MessageBoxButtons.OK,MessageBoxIcon.Error);
             }
         }
  
