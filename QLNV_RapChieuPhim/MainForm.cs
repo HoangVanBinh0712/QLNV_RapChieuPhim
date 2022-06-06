@@ -39,6 +39,8 @@ namespace QLNV_RapChieuPhim
             int x = dgvMain.Columns.Count;
             for(int i = 0;i<x;i++)  
                 dgvMain.Columns[i].Width = (dgvMain.Width - 60)/ x;
+            cbSort.Items.Clear();
+            cbSort.Items.Add("Tên NV");
         }
         public void Luong_load()
         {
@@ -223,6 +225,9 @@ namespace QLNV_RapChieuPhim
             int x = dgvMain.Columns.Count;
             for (int i = 0; i < x; i++)
                 dgvMain.Columns[i].Width = (dgvMain.Width - 60) / x;
+            cbSort.Items.Clear();
+            cbSort.Items.Add("Công Việc");
+          
 
         }
         public void LLV_load()
