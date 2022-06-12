@@ -43,7 +43,7 @@ namespace QLNV_RapChieuPhim
                 dt = db.ExecuteQueryDataset("Select * from NhanVien Where MaNV=" + lg.getUsername() + "and Password=" + lg.getPassword(), CommandType.Text, null);
                 if (dt.Tables[0].Rows.Count == 0)
                     rl = false;
-            }catch(SqlException e)
+            }catch
             {
                 
             }

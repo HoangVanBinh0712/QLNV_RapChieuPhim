@@ -41,7 +41,11 @@ namespace QLNV_RapChieuPhim
         private void FormCV_Load(object sender, EventArgs e)
         {
             CV_load();
-
+            DataUser user = DataUser.getInstance();
+            NhanVienDAO nv = user.getNhanVien();
+            DBBusiness db = new DBBusiness();
+            bool isAdmin = db.kiemtraquanly(nv.getNVid().ToString());
+            btnEdit.Enabled = isAdmin;
         }
 
         private void btnThoat_Click_1(object sender, EventArgs e)

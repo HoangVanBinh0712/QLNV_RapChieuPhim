@@ -117,6 +117,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <Compile Include="Singleton Pattern\DataLogin.cs" />
+    <Compile Include="Singleton Pattern\DataUser.cs" />
     <Compile Include="Template Method\sapXepTheoID.cs" />
     <Compile Include="Template Method\sapXepTheoLuong.cs" />
     <Compile Include="Template Method\sapXepTheoNgay.cs" />
@@ -283,6 +284,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\timkiem11.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\sort.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

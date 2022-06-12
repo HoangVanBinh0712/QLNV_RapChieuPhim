@@ -19,6 +19,14 @@ namespace QLNV_RapChieuPhim
             AddChuThich();
             if(NHANVIENKHAC(lg.getUsername())&& QuanLy(lg.getUsername())==false)
             {
+                txtNVID.Enabled = false;
+                txtNVName.Enabled = false;
+                TPBirthday.Enabled = false;
+                txtNVPhone.Enabled = false;
+                txtNVEmail.Enabled = false;
+                txtNVJob.Enabled = false;
+                TPDRented.Enabled = false;
+
                 btnNVBrowse.Enabled = false;
                 btnNVdelete.Enabled = false;
                 btnNVInsert.Enabled = false;
@@ -43,11 +51,20 @@ namespace QLNV_RapChieuPhim
             txtNVEmail.Text = NV.getNVEmail();
             txtNVJob.Text = NV.getNVJob();
             TPDRented.Value = NV.getDRented();
-            if (pass == false && QuanLy((lg.getUsername()))==false)
+            //Kiểm tra quản lý
+            bool isAdmin = QuanLy((lg.getUsername()));
+            if (pass == false && isAdmin == false)
             {
                 txtNVPas.PasswordChar = '*';
                 txtNVPas.MaxLength = 20;
             }
+            //txtNVID.Enabled = isAdmin;
+            //txtNVName.Enabled = isAdmin;
+            //TPBirthday.Enabled = isAdmin;
+            //txtNVPhone.Enabled = isAdmin;
+            //txtNVEmail.Enabled = isAdmin;
+            //txtNVJob.Enabled = isAdmin;
+            //TPDRented.Enabled = isAdmin;
 
             txtNVPas.Text = NV.getpassword();
             

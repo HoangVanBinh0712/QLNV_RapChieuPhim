@@ -24,7 +24,7 @@ namespace QLNV_RapChieuPhim
                 dt = this.ExecuteQueryDataset("Select * from NhanVien Where MaNV=" + lg.getUsername() + "and Password=" + lg.getPassword(), CommandType.Text, null);
                 connec = true;
             }
-            catch (SqlException e)
+            catch
             {
                 connec = false;
             }

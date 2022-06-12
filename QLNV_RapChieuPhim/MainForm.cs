@@ -41,6 +41,7 @@ namespace QLNV_RapChieuPhim
                 dgvMain.Columns[i].Width = (dgvMain.Width - 60)/ x;
             cbSort.Items.Clear();
             cbSort.Items.Add("Tên NV");
+            cbSort.SelectedItem = "Tên NV";
         }
         public void Luong_load()
         {
@@ -57,6 +58,7 @@ namespace QLNV_RapChieuPhim
             cbSort.Items.Add("Ngày");
             cbSort.Items.Add("Thưởng");
             cbSort.Items.Add("Số giờ");
+            cbSort.SelectedItem = "Lương";
 
         }
         void newchuthich(ToolTip[] x,int n)
@@ -74,7 +76,7 @@ namespace QLNV_RapChieuPhim
             newchuthich(chuthich, 20);
             chuthich[1].SetToolTip(picreset, "Reset");
             chuthich[2].SetToolTip(btnTimKiem, "Tìm Kiếm");
-            chuthich[3].SetToolTip(btnThoat, "Thoát");
+            chuthich[3].SetToolTip(picSort, "Sắp xếp");
             chuthich[4].SetToolTip(btndetail, "Xem chi tiết (Nhân Viên, Lương, Công Viêc, Lượt Làm)");
             chuthich[4].SetToolTip(txtTimkiem, "Nhập mã công việc với bảng công việc, còn lại là mã nhân viên");
 
@@ -132,7 +134,16 @@ namespace QLNV_RapChieuPhim
                 }
               
             }else if(btnLuotlv)
-            {  
+            {
+                DataUser user = DataUser.getInstance();
+
+                NhanVienDAO nv = user.getNhanVien();
+
+                if (!db.kiemtraquanly(nv.getNVid().ToString()))
+                {
+                    MessageBox.Show("Chỉ có admin mới sử dụng tính năng này !", "Thông báo");
+                    return;
+                }
                 FrmLLV x = new FrmLLV();
                 x.ShowDialog();
             }
@@ -227,7 +238,8 @@ namespace QLNV_RapChieuPhim
                 dgvMain.Columns[i].Width = (dgvMain.Width - 60) / x;
             cbSort.Items.Clear();
             cbSort.Items.Add("Công Việc");
-          
+            cbSort.SelectedItem = "Công Việc";
+
 
         }
         public void LLV_load()
@@ -238,7 +250,7 @@ namespace QLNV_RapChieuPhim
             int x = dgvMain.Columns.Count;
             for (int i = 0; i < x; i++)
                 dgvMain.Columns[i].Width = (dgvMain.Width - 60) / x;
-
+            cbSort.Items.Clear();
         }
         public NhanVienDAO getNVDAOSELECTED(int id)
         {
@@ -269,7 +281,7 @@ namespace QLNV_RapChieuPhim
                 try {
                     NhanVienDAO NV = getNVDAOSELECTED(int.Parse(txtTimkiem.Text));
                 }
-                catch(Exception e1)
+                catch
                 {
                     MessageBox.Show("Khong Tim thay vui long kiem tra lai", "Thong Bao", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
@@ -322,6 +334,7 @@ namespace QLNV_RapChieuPhim
         {
             menuStrip1.Enabled = true;
             menuStrip1.Show();
+
         }
 
         private void xemLươngToolStripMenuItem_Click(object sender, EventArgs e)
@@ -360,13 +373,14 @@ namespace QLNV_RapChieuPhim
             this.Close();       
         }
 
-        private void btnThoat_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
-        }
-
         private void button1_Click(object sender, EventArgs e)
         {
+
+            if(cbChucNang.SelectedItem.ToString().Equals("LƯỢT LÀM VIỆC"))
+            {
+                return;
+            }    
+
             if(cbChucNang.SelectedItem.ToString() == "NHÂN VIÊN")
             {
                 if (dgvMain.DataSource == null)
@@ -440,10 +454,19 @@ namespace QLNV_RapChieuPhim
                     return;
                 }
             }
+            
         
         }
         private bool des = false;
         private bool lsort = false, tlsort = false, manvsort = false, ngaysort = false, thuongsort = false, sogiolamSort = false;
+
+        private void xemThôngTinToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DataUser user = DataUser.getInstance();
+            NVDetails x = new NVDetails(user.getNhanVien(), pass);
+            x.ShowDialog();
+        }
+
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
         {
             des = !des;
