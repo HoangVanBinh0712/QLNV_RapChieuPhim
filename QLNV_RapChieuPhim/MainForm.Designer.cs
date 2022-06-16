@@ -41,6 +41,7 @@
             this.picNV = new System.Windows.Forms.PictureBox();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.MNTienIch = new System.Windows.Forms.ToolStripMenuItem();
+            this.xemThôngTinToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.xemLươngToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.đăngXuấtToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.btnTimKiem = new System.Windows.Forms.Button();
@@ -49,7 +50,6 @@
             this.cbSort = new System.Windows.Forms.ComboBox();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.picSort = new System.Windows.Forms.PictureBox();
-            this.xemThôngTinToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMain)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv1NV)).BeginInit();
             this.pnlUser.SuspendLayout();
@@ -63,10 +63,11 @@
             // 
             this.dgvMain.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dgvMain.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvMain.Location = new System.Drawing.Point(11, 189);
+            this.dgvMain.Location = new System.Drawing.Point(15, 233);
+            this.dgvMain.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dgvMain.Name = "dgvMain";
             this.dgvMain.RowHeadersWidth = 51;
-            this.dgvMain.Size = new System.Drawing.Size(891, 285);
+            this.dgvMain.Size = new System.Drawing.Size(1188, 351);
             this.dgvMain.TabIndex = 6;
             // 
             // label1
@@ -75,9 +76,10 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Red;
-            this.label1.Location = new System.Drawing.Point(245, 9);
+            this.label1.Location = new System.Drawing.Point(327, 11);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(469, 31);
+            this.label1.Size = new System.Drawing.Size(588, 38);
             this.label1.TabIndex = 10;
             this.label1.Text = "NHÂN VIÊN RẠP CHIẾU PHIM ABC";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -86,9 +88,10 @@
             // 
             this.lblROLE.BackColor = System.Drawing.Color.Transparent;
             this.lblROLE.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblROLE.Location = new System.Drawing.Point(66, 16);
+            this.lblROLE.Location = new System.Drawing.Point(88, 20);
+            this.lblROLE.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblROLE.Name = "lblROLE";
-            this.lblROLE.Size = new System.Drawing.Size(201, 28);
+            this.lblROLE.Size = new System.Drawing.Size(268, 34);
             this.lblROLE.TabIndex = 11;
             // 
             // cbChucNang
@@ -102,9 +105,10 @@
             "LƯƠNG",
             "LƯỢT LÀM VIỆC",
             "NHÂN VIÊN"});
-            this.cbChucNang.Location = new System.Drawing.Point(165, 151);
+            this.cbChucNang.Location = new System.Drawing.Point(14, 189);
+            this.cbChucNang.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cbChucNang.Name = "cbChucNang";
-            this.cbChucNang.Size = new System.Drawing.Size(184, 30);
+            this.cbChucNang.Size = new System.Drawing.Size(244, 34);
             this.cbChucNang.TabIndex = 13;
             this.cbChucNang.SelectedIndexChanged += new System.EventHandler(this.cbChucNang_SelectedIndexChanged);
             // 
@@ -114,27 +118,30 @@
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.Blue;
-            this.label2.Location = new System.Drawing.Point(208, 126);
+            this.label2.Location = new System.Drawing.Point(71, 158);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(110, 22);
+            this.label2.Size = new System.Drawing.Size(138, 26);
             this.label2.TabIndex = 14;
             this.label2.Text = "TÙY CHỌN";
             // 
             // dgv1NV
             // 
             this.dgv1NV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv1NV.Location = new System.Drawing.Point(354, 151);
+            this.dgv1NV.Location = new System.Drawing.Point(266, 189);
+            this.dgv1NV.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dgv1NV.Name = "dgv1NV";
             this.dgv1NV.RowHeadersWidth = 51;
-            this.dgv1NV.Size = new System.Drawing.Size(10, 10);
+            this.dgv1NV.Size = new System.Drawing.Size(13, 12);
             this.dgv1NV.TabIndex = 16;
             // 
             // txtTimkiem
             // 
             this.txtTimkiem.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTimkiem.Location = new System.Drawing.Point(112, 487);
+            this.txtTimkiem.Location = new System.Drawing.Point(458, 188);
+            this.txtTimkiem.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtTimkiem.Name = "txtTimkiem";
-            this.txtTimkiem.Size = new System.Drawing.Size(109, 29);
+            this.txtTimkiem.Size = new System.Drawing.Size(285, 35);
             this.txtTimkiem.TabIndex = 18;
             // 
             // lblsearch
@@ -143,19 +150,21 @@
             this.lblsearch.BackColor = System.Drawing.Color.Transparent;
             this.lblsearch.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblsearch.ForeColor = System.Drawing.Color.Blue;
-            this.lblsearch.Location = new System.Drawing.Point(7, 490);
+            this.lblsearch.Location = new System.Drawing.Point(542, 158);
+            this.lblsearch.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblsearch.Name = "lblsearch";
-            this.lblsearch.Size = new System.Drawing.Size(103, 22);
+            this.lblsearch.Size = new System.Drawing.Size(140, 26);
             this.lblsearch.TabIndex = 20;
-            this.lblsearch.Text = "NHẬP MÃ:";
+            this.lblsearch.Text = "TÌM KIẾM:";
             // 
             // pnlUser
             // 
             this.pnlUser.Controls.Add(this.picNV);
             this.pnlUser.Controls.Add(this.lblROLE);
-            this.pnlUser.Location = new System.Drawing.Point(12, 54);
+            this.pnlUser.Location = new System.Drawing.Point(16, 66);
+            this.pnlUser.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pnlUser.Name = "pnlUser";
-            this.pnlUser.Size = new System.Drawing.Size(306, 57);
+            this.pnlUser.Size = new System.Drawing.Size(408, 70);
             this.pnlUser.TabIndex = 21;
             this.pnlUser.Click += new System.EventHandler(this.pnlUser_Click);
             // 
@@ -163,9 +172,10 @@
             // 
             this.picNV.BackColor = System.Drawing.Color.Transparent;
             this.picNV.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.picNV.Location = new System.Drawing.Point(15, 8);
+            this.picNV.Location = new System.Drawing.Point(20, 10);
+            this.picNV.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.picNV.Name = "picNV";
-            this.picNV.Size = new System.Drawing.Size(45, 42);
+            this.picNV.Size = new System.Drawing.Size(60, 52);
             this.picNV.TabIndex = 12;
             this.picNV.TabStop = false;
             // 
@@ -175,10 +185,10 @@
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.MNTienIch});
-            this.menuStrip1.Location = new System.Drawing.Point(719, 54);
+            this.menuStrip1.Location = new System.Drawing.Point(959, 66);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
-            this.menuStrip1.Size = new System.Drawing.Size(66, 24);
+            this.menuStrip1.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
+            this.menuStrip1.Size = new System.Drawing.Size(81, 28);
             this.menuStrip1.TabIndex = 13;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -189,20 +199,27 @@
             this.xemLươngToolStripMenuItem,
             this.đăngXuấtToolStripMenuItem});
             this.MNTienIch.Name = "MNTienIch";
-            this.MNTienIch.Size = new System.Drawing.Size(60, 20);
+            this.MNTienIch.Size = new System.Drawing.Size(74, 24);
             this.MNTienIch.Text = "Tiện ích";
+            // 
+            // xemThôngTinToolStripMenuItem
+            // 
+            this.xemThôngTinToolStripMenuItem.Name = "xemThôngTinToolStripMenuItem";
+            this.xemThôngTinToolStripMenuItem.Size = new System.Drawing.Size(186, 26);
+            this.xemThôngTinToolStripMenuItem.Text = "Xem thông tin";
+            this.xemThôngTinToolStripMenuItem.Click += new System.EventHandler(this.xemThôngTinToolStripMenuItem_Click);
             // 
             // xemLươngToolStripMenuItem
             // 
             this.xemLươngToolStripMenuItem.Name = "xemLươngToolStripMenuItem";
-            this.xemLươngToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.xemLươngToolStripMenuItem.Size = new System.Drawing.Size(186, 26);
             this.xemLươngToolStripMenuItem.Text = "Xem Lương";
             this.xemLươngToolStripMenuItem.Click += new System.EventHandler(this.xemLươngToolStripMenuItem_Click);
             // 
             // đăngXuấtToolStripMenuItem
             // 
             this.đăngXuấtToolStripMenuItem.Name = "đăngXuấtToolStripMenuItem";
-            this.đăngXuấtToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.đăngXuấtToolStripMenuItem.Size = new System.Drawing.Size(186, 26);
             this.đăngXuấtToolStripMenuItem.Text = "Đăng xuất";
             this.đăngXuấtToolStripMenuItem.Click += new System.EventHandler(this.đăngXuấtToolStripMenuItem_Click);
             // 
@@ -215,9 +232,10 @@
             this.btnTimKiem.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnTimKiem.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnTimKiem.ForeColor = System.Drawing.Color.Black;
-            this.btnTimKiem.Location = new System.Drawing.Point(226, 487);
+            this.btnTimKiem.Location = new System.Drawing.Point(751, 188);
+            this.btnTimKiem.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnTimKiem.Name = "btnTimKiem";
-            this.btnTimKiem.Size = new System.Drawing.Size(31, 28);
+            this.btnTimKiem.Size = new System.Drawing.Size(41, 34);
             this.btnTimKiem.TabIndex = 19;
             this.btnTimKiem.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnTimKiem.UseVisualStyleBackColor = false;
@@ -231,9 +249,10 @@
             this.picreset.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.picreset.ErrorImage = null;
             this.picreset.InitialImage = null;
-            this.picreset.Location = new System.Drawing.Point(868, 487);
+            this.picreset.Location = new System.Drawing.Point(1157, 599);
+            this.picreset.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.picreset.Name = "picreset";
-            this.picreset.Size = new System.Drawing.Size(34, 28);
+            this.picreset.Size = new System.Drawing.Size(44, 34);
             this.picreset.TabIndex = 12;
             this.picreset.TabStop = false;
             this.picreset.Click += new System.EventHandler(this.picreset_Click);
@@ -247,9 +266,10 @@
             this.btndetail.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btndetail.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btndetail.ForeColor = System.Drawing.Color.Blue;
-            this.btndetail.Location = new System.Drawing.Point(12, 141);
+            this.btndetail.Location = new System.Drawing.Point(16, 592);
+            this.btndetail.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btndetail.Name = "btndetail";
-            this.btndetail.Size = new System.Drawing.Size(115, 43);
+            this.btndetail.Size = new System.Drawing.Size(153, 53);
             this.btndetail.TabIndex = 5;
             this.btndetail.Text = "DETAIL";
             this.btndetail.UseVisualStyleBackColor = false;
@@ -261,18 +281,20 @@
             this.cbSort.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbSort.ForeColor = System.Drawing.Color.Red;
             this.cbSort.FormattingEnabled = true;
-            this.cbSort.Location = new System.Drawing.Point(728, 151);
+            this.cbSort.Location = new System.Drawing.Point(971, 186);
+            this.cbSort.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cbSort.Name = "cbSort";
-            this.cbSort.Size = new System.Drawing.Size(174, 30);
+            this.cbSort.Size = new System.Drawing.Size(231, 34);
             this.cbSort.TabIndex = 23;
             this.cbSort.SelectedIndexChanged += new System.EventHandler(this.cbSort_SelectedIndexChanged);
             // 
             // checkBox1
             // 
             this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(831, 128);
+            this.checkBox1.Location = new System.Drawing.Point(1108, 158);
+            this.checkBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(71, 17);
+            this.checkBox1.Size = new System.Drawing.Size(91, 21);
             this.checkBox1.TabIndex = 24;
             this.checkBox1.Text = "Giảm dần";
             this.checkBox1.UseVisualStyleBackColor = true;
@@ -286,27 +308,21 @@
             this.picSort.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.picSort.ErrorImage = null;
             this.picSort.InitialImage = null;
-            this.picSort.Location = new System.Drawing.Point(663, 151);
+            this.picSort.Location = new System.Drawing.Point(884, 186);
+            this.picSort.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.picSort.Name = "picSort";
-            this.picSort.Size = new System.Drawing.Size(34, 30);
+            this.picSort.Size = new System.Drawing.Size(44, 36);
             this.picSort.TabIndex = 25;
             this.picSort.TabStop = false;
             this.picSort.Click += new System.EventHandler(this.button1_Click);
             // 
-            // xemThôngTinToolStripMenuItem
-            // 
-            this.xemThôngTinToolStripMenuItem.Name = "xemThôngTinToolStripMenuItem";
-            this.xemThôngTinToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.xemThôngTinToolStripMenuItem.Text = "Xem thông tin";
-            this.xemThôngTinToolStripMenuItem.Click += new System.EventHandler(this.xemThôngTinToolStripMenuItem_Click);
-            // 
             // mainForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.ClientSize = new System.Drawing.Size(914, 544);
+            this.ClientSize = new System.Drawing.Size(1219, 670);
             this.Controls.Add(this.picSort);
             this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.cbSort);
@@ -324,6 +340,7 @@
             this.Controls.Add(this.btndetail);
             this.ForeColor = System.Drawing.Color.Red;
             this.MainMenuStrip = this.menuStrip1;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "mainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Trang Chủ";

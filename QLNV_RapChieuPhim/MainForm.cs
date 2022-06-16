@@ -5,6 +5,8 @@ using System.Drawing.Drawing2D;
 using System.IO;
 using System.Windows.Forms;
 using QLNV_RapChieuPhim.Singleton_Pattern;
+using QLNV_RapChieuPhim.Strategy_Pattern;
+
 namespace QLNV_RapChieuPhim
 {
    
@@ -278,14 +280,16 @@ namespace QLNV_RapChieuPhim
         {
             if(btnnv==true)
             {
-                try {
-                    NhanVienDAO NV = getNVDAOSELECTED(int.Parse(txtTimkiem.Text));
-                }
-                catch
-                {
-                    MessageBox.Show("Khong Tim thay vui long kiem tra lai", "Thong Bao", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-            }else if(btnluong)
+                if (dgvMain.DataSource == null)
+                    return;
+                DataTable dataTable = (DataTable)dgvMain.DataSource;
+                SearchContext snv = new SearchContext(new SearchNV());
+                string search = txtTimkiem.Text;
+                dgvMain.DataSource = snv.SearchResult(search, dataTable);
+               
+                return;
+            }
+            else if(btnluong)
             {
                 int r =-1;
                 for (int i = 0; i < dgvMain.Rows.Count; i++)
@@ -309,21 +313,19 @@ namespace QLNV_RapChieuPhim
             }
             else if (btnLuotlv)
             {
-                db = new DBBusiness();
-                DataSet dt = db.LocNV(txtTimkiem.Text);
-                dgvMain.DataSource = dt.Tables[0];
-                int x = dgvMain.Columns.Count;
-                for (int i = 0; i < x; i++)
-                    dgvMain.Columns[i].Width = (dgvMain.Width - 60) / x;
+                DataTable dataTable = (DataTable)dgvMain.DataSource;
+                SearchContext sllv = new SearchContext(new SearchLLV());
+                string search = txtTimkiem.Text;
+                dgvMain.DataSource = sllv.SearchResult(search, dataTable);
+                return;
             }
             else
             {
-                db = new DBBusiness();
-                DataSet dt = db.LocCV(txtTimkiem.Text);
-                dgvMain.DataSource = dt.Tables[0];
-                int x = dgvMain.Columns.Count;
-                for (int i = 0; i < x; i++)
-                    dgvMain.Columns[i].Width = (dgvMain.Width - 60) / x;
+                DataTable dataTable = (DataTable)dgvMain.DataSource;
+                SearchContext scv = new SearchContext(new SearchCV());
+                string search = txtTimkiem.Text;
+                dgvMain.DataSource = scv.SearchResult(search, dataTable);
+                return;
             } 
         }
         private void mainForm_FormClosing(object sender, FormClosingEventArgs e)

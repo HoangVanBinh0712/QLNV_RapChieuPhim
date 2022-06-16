@@ -118,6 +118,11 @@
     </Compile>
     <Compile Include="Singleton Pattern\DataLogin.cs" />
     <Compile Include="Singleton Pattern\DataUser.cs" />
+    <Compile Include="Strategy Pattern\SearchContext.cs" />
+    <Compile Include="Strategy Pattern\SearchCV.cs" />
+    <Compile Include="Strategy Pattern\SearchLLV.cs" />
+    <Compile Include="Strategy Pattern\SearchNV.cs" />
+    <Compile Include="Strategy Pattern\StrategySearch.cs" />
     <Compile Include="Template Method\sapXepTheoID.cs" />
     <Compile Include="Template Method\sapXepTheoLuong.cs" />
     <Compile Include="Template Method\sapXepTheoNgay.cs" />
