@@ -25,13 +25,13 @@ namespace QLNV_RapChieuPhim
             else if (txtGioLam.Text == "")
             {
                 DialogResult traloi;
-                traloi = MessageBox.Show("Hãy nhập Giờ Làm!", "Trả lời",
+                traloi = MessageBox.Show("Hãy nhập giờ làm!", "Trả lời",
                     MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
             }
             else if (checkToi.Checked == false && checkSang.Checked == false)
             {
                 DialogResult traloi;
-                traloi = MessageBox.Show("Hãy Chọn Ca Làm Việc!", "Trả lời",
+                traloi = MessageBox.Show("Hãy chọn ca làm việc!", "Trả lời",
                     MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
 
             }
@@ -61,11 +61,17 @@ namespace QLNV_RapChieuPhim
 
                 //
                 DialogResult tl = new DialogResult();
-                tl = MessageBox.Show("Ban muon Them Moi?",
+                tl = MessageBox.Show("Ban muon them moi?",
                     "Thong Bao", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                LLVDAO llv = new LLVDAO(LLV_id, SoGio, GioBD, GioKT, NgayLam);
+                LLVAdapter llvAdapter = new LLVAdapter();
                 if (tl == DialogResult.Yes)
                 {
-                    if (!db.insertLLV(ref err, LLV_id, SoGio, GioBD, GioKT, NgayLam))
+                    /*if (!db.insertLLV(ref err, LLV_id, SoGio, GioBD, GioKT, NgayLam))
+                        MessageBox.Show(err, "Thong Bao", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    else
+                        MessageBox.Show("Insert successfully", "Thong Bao", MessageBoxButtons.OK, MessageBoxIcon.Information);*/
+                    if (!llvAdapter.InsertLLV(ref err, llv))
                         MessageBox.Show(err, "Thong Bao", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     else
                         MessageBox.Show("Insert successfully", "Thong Bao", MessageBoxButtons.OK, MessageBoxIcon.Information);

@@ -13,6 +13,17 @@ namespace QLNV_RapChieuPhim
         private string TenCV;
         private string MoTa;
 
+        public CVDAO()
+        {
+
+        }
+        public CVDAO(int maCV, int maNV, string tenCV, string moTa)
+        {
+            MaCV = maCV;
+            MaNV = maNV;
+            TenCV = tenCV;
+            MoTa = moTa;
+        }
 
         public int getMaCV() {
             return MaCV;

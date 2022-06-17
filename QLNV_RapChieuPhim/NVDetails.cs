@@ -121,8 +121,14 @@ namespace QLNV_RapChieuPhim
                 picNV.Image.Save(ms, System.Drawing.Imaging.ImageFormat.Gif);
                 Byte[] bytBLOBData = new Byte[ms.Length];
                 ms.Position = 0;
-                ms.Read(bytBLOBData, 0, Convert.ToInt32(ms.Length));         
-                if (!db.updateNV(ref err, id, name,bir, sdt, email, chuyemon,pass,rent, bytBLOBData))
+                ms.Read(bytBLOBData, 0, Convert.ToInt32(ms.Length));
+                NhanVienDAO nv = new NhanVienDAO(id, name, bir, sdt, email, chuyemon, rent, pass, picNV.Image);
+                NhanVienAdapter nhanVienAdapter = new NhanVienAdapter();
+                /*if (!db.updateNV(ref err, id, name,bir, sdt, email, chuyemon,pass,rent, bytBLOBData))
+                    MessageBox.Show(err, "Thong Bao", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                else
+                    MessageBox.Show("Update successfully", "Thong Bao", MessageBoxButtons.OK, MessageBoxIcon.Information);*/
+                if (!nhanVienAdapter.UpdateNhanVien(ref err, nv))
                     MessageBox.Show(err, "Thong Bao", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 else
                     MessageBox.Show("Update successfully", "Thong Bao", MessageBoxButtons.OK, MessageBoxIcon.Information);

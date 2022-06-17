@@ -6,10 +6,9 @@ using System.Threading.Tasks;
 
 namespace QLNV_RapChieuPhim
 {
-    public interface INhanVien
+    public interface ICV
     {
-        bool InsertNhanVien(ref string err, NhanVienDAO nv); 
-        bool UpdateNhanVien(ref string err, NhanVienDAO nv);
-
+        bool InsertCV(ref string err, CVDAO cv);
+        bool UpdateCV(ref string err, CVDAO cv);
     }
 }

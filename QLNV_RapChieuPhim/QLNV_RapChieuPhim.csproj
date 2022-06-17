@@ -64,7 +64,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Adapter Pattern\CVAdapter.cs" />
+    <Compile Include="Adapter Pattern\ICV.cs" />
+    <Compile Include="Adapter Pattern\ILLV.cs" />
+    <Compile Include="Adapter Pattern\ILuong.cs" />
     <Compile Include="Adapter Pattern\INhanVien.cs" />
+    <Compile Include="Adapter Pattern\LLVAdapter.cs" />
+    <Compile Include="Adapter Pattern\LuongAdapter.cs" />
     <Compile Include="Adapter Pattern\NhanVienAdapter.cs" />
     <Compile Include="DAO\CVDAO.cs" />
     <Compile Include="FormCV.cs">

@@ -14,6 +14,11 @@ namespace QLNV_RapChieuPhim
         private int Luongtheogio;
         private int Thuong;
         private int Tongluong;
+
+        public LUONGDAO()
+        {
+
+        }
         public int getLuongID()
         {
             return this.MaNV;

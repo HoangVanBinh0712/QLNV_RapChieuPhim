@@ -36,9 +36,12 @@ namespace QLNV_RapChieuPhim
 
         }
 
-        public void UơdateNhanVien()
+        public bool UpdateNhanVien(ref string err, NhanVienDAO nv)
         {
-            throw new NotImplementedException();
+            return (db.updateNV(ref err, nv.getNVid(), nv.getNVName(),
+                nv.getNVBirth(), nv.getNVPNum(), nv.getNVEmail(),
+                nv.getNVJob(), nv.getpassword(), nv.getDRented(),
+                imageToByteArray(nv.getNVimg())));
         }
     }
 }

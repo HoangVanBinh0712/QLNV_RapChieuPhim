@@ -72,7 +72,7 @@ namespace QLNV_RapChieuPhim
             return db.MyexecuteNonQuery("DeleteNV", CommandType.Text, ref err, new SqlParameter("@id", id));
         }
         public bool updateNV(ref string err, int id, string name, DateTime birthd,
-        string sdt, string Email,string chmon,string pass, DateTime NgayThue,Byte[] img )
+        string sdt, string Email,string chmon,string pass, DateTime NgayThue, Byte[] img )
         {
             return db.MyexecuteNonQuery(
                 "UpdateNV",
@@ -109,6 +109,7 @@ namespace QLNV_RapChieuPhim
         {
             return db.MyexecuteNonQuery("XoaLuong", CommandType.StoredProcedure, ref err, new SqlParameter("@Manv", id));
         }
+        // MaNV,Luongtheogio,DAY,Thuong
         public bool updateLuong(ref string err, int id,DateTime DAY, int Luongtheogio, int Thuong)
         {
             return db.MyexecuteNonQuery(
@@ -128,6 +129,7 @@ namespace QLNV_RapChieuPhim
         {
             return db.ExecuteQueryDataset("Select * from LUOTLAMVIEC WHERE MaNV = " + a, CommandType.Text, null);
         }
+        //Ham nay du tham so
         public bool insertLLV(ref string err, int MaNV, int GioLam, TimeSpan GioBatDau, TimeSpan GioKetThuc, DateTime NgayLam)
         {
             return db.MyexecuteNonQuery("addLLV", CommandType.StoredProcedure, ref err,
@@ -143,6 +145,7 @@ namespace QLNV_RapChieuPhim
                 new SqlParameter("@MaNV", MaNV),
                 new SqlParameter("@NgayLam", NgayLam));
         }
+        //ham nay du tham so
         public bool updateLLV(ref string err, int MaNV, int GioLam, TimeSpan GioBatDau, TimeSpan GioKetThuc, DateTime NgayLam)
         {
             return db.MyexecuteNonQuery("upd_LLV", CommandType.StoredProcedure, ref err,
@@ -161,7 +164,7 @@ namespace QLNV_RapChieuPhim
         {
             return db.ExecuteQueryDataset("Select * from CongViec", CommandType.Text, null);
         }
-
+        //Ham nay du tham so
         public bool insertCV(ref string err, int MaCV, string TenCV, string MoTa, int MaNV)
         {
             return db.MyexecuteNonQuery("insert_CV", CommandType.StoredProcedure, ref err,
@@ -170,7 +173,7 @@ namespace QLNV_RapChieuPhim
                 new SqlParameter("@MoTa", MoTa),
                 new SqlParameter("@MaNV", MaNV));
         }
-
+        //Ham nay du tham so
         public bool updateCV(ref string err, int MaCV, string TenCV, string MoTa, int MaNV)
         {
             return db.MyexecuteNonQuery("UpdateCongViec", CommandType.StoredProcedure, ref err,

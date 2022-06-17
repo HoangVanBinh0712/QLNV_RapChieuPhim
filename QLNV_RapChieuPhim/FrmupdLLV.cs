@@ -46,9 +46,15 @@ namespace QLNV_RapChieuPhim
             DialogResult tl = new DialogResult();
             tl = MessageBox.Show("Bạn muốn Cập Nhật?",
                 "Thông Báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            LLVDAO llv = new LLVDAO(LLV_id, SoGio, GioBD, GioKT, NgayLam);
+            LLVAdapter llvAdapter = new LLVAdapter();
             if (tl == DialogResult.Yes)
             {
-                if (!db.updateLLV(ref err, LLV_id, SoGio, GioBD, GioKT, NgayLam))
+                /*if (!db.updateLLV(ref err, LLV_id, SoGio, GioBD, GioKT, NgayLam))
+                    MessageBox.Show(err, "Thong Bao", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                else
+                    MessageBox.Show("Updated successfully", "Thong Bao", MessageBoxButtons.OK, MessageBoxIcon.Information);*/
+                if (!llvAdapter.UpdateLLV(ref err, llv))
                     MessageBox.Show(err, "Thong Bao", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 else
                     MessageBox.Show("Updated successfully", "Thong Bao", MessageBoxButtons.OK, MessageBoxIcon.Information);

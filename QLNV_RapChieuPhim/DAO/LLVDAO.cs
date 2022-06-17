@@ -14,6 +14,18 @@ namespace QLNV_RapChieuPhim
         private TimeSpan GioKetThuc;
         private DateTime NgayLam;
         //ID
+        public LLVDAO()
+        {
+        }
+        public LLVDAO(int LLVid, float gioLam, TimeSpan gioBatDau, TimeSpan gioKetThuc, DateTime ngayLam)
+        {
+            LLV_ID = LLVid;
+            GioLam = gioLam;
+            GioBatDau = gioBatDau;
+            GioKetThuc = gioKetThuc;
+            NgayLam = ngayLam;
+
+        }
         public int getLLVid()
         {
             return this.LLV_ID;

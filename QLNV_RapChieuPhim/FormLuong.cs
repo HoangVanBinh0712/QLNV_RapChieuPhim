@@ -61,9 +61,10 @@ namespace QLNV_RapChieuPhim
             DialogResult tl = new DialogResult();
             tl = MessageBox.Show("Ban muon cap nhap?",
                 "Thong Bao", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            LuongAdapter luongAdapter = new LuongAdapter();
             if (tl == DialogResult.Yes)
             {
-                if (!db.updateLuong(ref err, MaNV,DAY, Luongtheogio, Thuong))
+                if (!luongAdapter.UpdateLuong(ref err, MaNV,Luongtheogio,DAY,Thuong))
                     MessageBox.Show(err, "Thong Bao", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 else
                 { 

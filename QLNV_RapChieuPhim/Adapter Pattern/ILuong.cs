@@ -6,10 +6,8 @@ using System.Threading.Tasks;
 
 namespace QLNV_RapChieuPhim
 {
-    public interface INhanVien
+    public interface ILuong
     {
-        bool InsertNhanVien(ref string err, NhanVienDAO nv); 
-        bool UpdateNhanVien(ref string err, NhanVienDAO nv);
-
+        bool UpdateLuong(ref string err, int id, int Luongtheogio, DateTime DAY, int Thuong);
     }
 }
